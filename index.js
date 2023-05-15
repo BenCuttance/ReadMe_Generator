@@ -56,7 +56,12 @@ const questions = [
     {
     type: 'input',
     message: 'What tests have been performed?',
-    name: 'githubName'
+    name: 'tests'
+    },
+    {
+    type: 'input',
+    message: 'What are the contribution guidelines?',
+    name: 'contribution'
     },
     {
     type: 'input',
@@ -69,30 +74,56 @@ const questions = [
     message: 'What is your repository URL',
     name: 'URL'
     },
-
-
-    
-    
   ]
   function ask() {
     inquirer.prompt(questions).then(answers => {
       console.log(answers.name), 
-      console.log(answers.jsts)
+      console.log(answers.license)
     fs.appendFile('README.md', `# ${answers.name}'s project: ${answers.project}
 
 ## Table of contents:
 
-${answers.description}
-    
+>* ### [Description.](#description)
+>* ### [Installation.](#installation)
+>* ### [Usage.](#project-usage)
+>* ### [Tests.](#tests)
+>* ### [Contribution Guidelines](#contribution-guidelines)
+>* ### [license](#license)
+>* ### [GitHub links.](#github-links)
+   
 ## Project Description
 
 ${answers.description},
+
+## Installation.
+
+${answers.install}.
+
+## Project Usage
+
+${answers.purpose}
+
+## Tests
+
+${answers.tests}
+
+## Contribution Guidelines
+
+${answers.contribution}
+
+## License
+
+this project is licensed under ${answers.license}
 
 ## GitHub
 
 Github username: ${answers.githubName}
 
-Github repository URL: ${answers.URL}`,
+Github repository URL: ${answers.URL}
+
+`,
+
+
      (err) =>
     err ? console.error(err) : console.log('Commit logged!'),
 //     fs.appendFile('style.css', 
