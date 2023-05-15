@@ -1,4 +1,4 @@
-# Ben's project: readme generator
+# Ben's project: Jess
 
 ## Table of contents:
 
@@ -12,31 +12,31 @@
    
 ## Project Description
 
-generes,
+It creates a read me,
 
 ## Installation.
 
-Git clone.
+Git hub.
 
 ## Project Usage
 
-To quickly gen a read me
+To help
 
 ## Tests
 
-Some
+Mnay 
 
 ## Contribution Guidelines
 
-Free use
+public
 
 ## License
 
-this project is licensed under Mozilla Public License 2.0
+this project is licensed under MIT
 
 ## GitHub
 
-Github username: Ben
+Github username: ben
 
-Github repository URL: Ben.com
+Github repository URL: .com
 

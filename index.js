@@ -4,13 +4,13 @@
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+
 
 // TODO: Create a function to initialize app
-function init() {}
+
 
 // Function call to initialize app
-init();
+
 
 const inquirer = require('inquirer');
 const fs = require('fs');
@@ -126,9 +126,21 @@ Github repository URL: ${answers.URL}
 
      (err) =>
     err ? console.error(err) : console.log('Commit logged!'),
-//     fs.appendFile('style.css', 
-//  (err) =>
-//     err ? console.error(err) : console.log('Commit logged!'))
+//   function licenseBadge() {
+//     if (`${answers.license}` === MIT ) {
+//     console.log (`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`)
+//     } else if 
+//       (`${answers.license}` ===  'Academic Free License v3.0' ) {
+//         console.log('2nd') 
+//       } else {
+//         console.log('other')
+//       }
+    
+    
+//   } 
+// //     fs.appendFile('style.css', 
+// //  (err) =>
+// //     err ? console.error(err) : console.log('Commit logged!'))
     
     
     )
