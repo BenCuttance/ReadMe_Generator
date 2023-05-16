@@ -11,6 +11,27 @@
 
 // Function call to initialize app
 
+function licenseBadge(license) {
+  // if (license === 'MIT' ) {
+  // return (`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`)
+  // } else if 
+  //   (license ===  'Academic Free License v3.0' ) {
+  //     console.log('2nd') 
+  //   } else {
+  //     console.log('other')
+  //   }
+  switch (license) {
+    case 'MIT': {return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`; break;}
+    case 'Academic Free License v3.0': {return `Academic Free License v3.0`; break;}
+    case 'Mozilla Public License 2.0': {return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`; break;}
+    case 'Microsoft Public License': {return `Microsoft Public License`; break;}
+    case 'Boost Software License 1.0': {return `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`; break;}
+    case 'Eclipse Public License 2.0': {return `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)`; break;}
+    default: {return 'No license'}
+  }
+
+
+} 
 
 const inquirer = require('inquirer');
 const fs = require('fs');
@@ -79,7 +100,9 @@ const questions = [
     inquirer.prompt(questions).then(answers => {
       console.log(answers.name), 
       console.log(answers.license)
-    fs.appendFile('README.md', `# ${answers.name}'s project: ${answers.project}
+    fs.writeFile('README.md', `${licenseBadge(answers.license)}
+    
+    # ${answers.name}'s project: ${answers.project}
 
 ## Table of contents:
 
@@ -125,19 +148,8 @@ Github repository URL: ${answers.URL}
 
 
      (err) =>
-    err ? console.error(err) : console.log('Commit logged!'),
-//   function licenseBadge() {
-//     if (`${answers.license}` === MIT ) {
-//     console.log (`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`)
-//     } else if 
-//       (`${answers.license}` ===  'Academic Free License v3.0' ) {
-//         console.log('2nd') 
-//       } else {
-//         console.log('other')
-//       }
-    
-    
-//   } 
+    err ? console.error(err) : console.log('README  Created!'),
+ 
 // //     fs.appendFile('style.css', 
 // //  (err) =>
 // //     err ? console.error(err) : console.log('Commit logged!'))
