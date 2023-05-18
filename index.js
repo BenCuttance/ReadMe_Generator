@@ -1,25 +1,9 @@
-// TODO: Include packages needed for this application
-
-// TODO: Create an array of questions for user input
 
 
-// TODO: Create a function to write README file
 
-
-// TODO: Create a function to initialize app
-
-
-// Function call to initialize app
+// Function call to imbed license Link sing switch statements
 
 function licenseBadge(license) {
-  // if (license === 'MIT' ) {
-  // return (`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`)
-  // } else if 
-  //   (license ===  'Academic Free License v3.0' ) {
-  //     console.log('2nd') 
-  //   } else {
-  //     console.log('other')
-  //   }
   switch (license) {
     case 'MIT': {return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`; break;}
     case 'Academic Free License v3.0': {return `Academic Free License v3.0`; break;}
@@ -32,6 +16,8 @@ function licenseBadge(license) {
 
 
 } 
+
+// Prompts using Inquirer to ask users the details they'd like to include with the README file
 
 const inquirer = require('inquirer');
 const fs = require('fs');
@@ -98,11 +84,10 @@ const questions = [
   ]
   function ask() {
     inquirer.prompt(questions).then(answers => {
-      console.log(answers.name), 
-      console.log(answers.license)
+     
     fs.writeFile('README.md', `${licenseBadge(answers.license)}
     
-    # ${answers.name}'s project: ${answers.project}
+# ${answers.name}'s project: ${answers.project}
 
 ## Table of contents:
 
@@ -149,11 +134,7 @@ Github repository URL: ${answers.URL}
 
      (err) =>
     err ? console.error(err) : console.log('README  Created!'),
- 
-// //     fs.appendFile('style.css', 
-// //  (err) =>
-// //     err ? console.error(err) : console.log('Commit logged!'))
-    
+     
     
     )
   })
